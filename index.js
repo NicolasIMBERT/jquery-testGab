@@ -22,11 +22,19 @@ $(document).ready(function () {
     hclick($('div#somediv'));
   });
 
-  $('#test').click(function () {
+  $('#cacher').click(function () {
     $('.generees').hide('slow');
   });
+  $('#montrer').click(function () {
+    $('.generees').show('fast');
+  });
 
-  $('p#pouet').click(function () {
+  $('p#vider').click(function () {
     $('.generees').empty();
+  });
+
+  $('p#supprimer').click(function () {
+    //$('#somediv').remove('.generees');
+    $('.generees').remove();
   });
 });
