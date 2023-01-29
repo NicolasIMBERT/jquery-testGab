@@ -5,7 +5,12 @@ h2 {
 .couleurmoche {
   font-size: 13px;
   color: brown;
+  border: 2px dotted green;
+  border-radius: 8px;
+  background-color: bisque;
+  height: 3em;
 }
+
 table {
   border: 2px dotted #bbbbbb;
   line-height: 50px;

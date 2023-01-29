@@ -4,11 +4,21 @@ import { somefunc } from './miscsvc.js';
 
 var creerelement = function (divtouse$) {
   //console.info('clicked2');
-
-  var mySel$ = $('<p/>', { id: Date.now() })
-    .html('element')
+  let myid = Date.now();
+  let mytr$ = $('<tr/>').appendTo(divtouse$);
+  $('<td/>', { id: myid, colspan: 3 })
+    .html('element ' + myid)
     .addClass('generees couleurmoche')
-    .appendTo(divtouse$);
+    .appendTo(mytr$)
+    .click(function () {
+      $(this).remove();
+    })
+    .mouseover(function () {
+      $(this).css({ color: 'blue', 'background-color': 'yellowgreen' });
+    })
+    .mouseout(function () {
+      $(this).css({ color: 'brown', 'background-color': 'bisque' });
+    });
 };
 
 $(document).ready(function () {
@@ -19,16 +29,10 @@ $(document).ready(function () {
 
   $('.creer').click(function () {
     // console.info('clicked');
-    creerelement($('div#somediv'));
+    creerelement($('div#somediv').find('tbody'));
   });
 
-  // $('#cacher').click(function () {
-  //   $('.generees').hide('slow');
-  // });
-
   $('#basculervisibilite').click(function () {
-    // console.info($(this).attr('statut'));
-
     if ($(this).attr('statut') == '1') {
       $(this).attr('statut', '0');
       $(this).html('cacher les éléments');
@@ -47,7 +51,6 @@ $(document).ready(function () {
   });
 
   $('p#supprimer').click(function () {
-    //$('#somediv').remove('.generees');
     $('.generees').remove();
   });
 });
