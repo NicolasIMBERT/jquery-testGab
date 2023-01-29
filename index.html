@@ -6,24 +6,26 @@
   ></script>
 </head>
 <body>
-  <h1 id="title">Créer un élément</h1>
+  <h1 id="title" class="creer">Créer un élément</h1>
   <p id="test"><strong style="color: #f00">It does not work</strong></p>
   <div id="someotherdiv">
     <table>
       <thead>
         <tr>
-          <th colspan="4">actions</th>
+          <th colspan="3" class="creer">Créer un élément</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><p id="vider" gabriel="valeur d'atribut">vider le texte</p></td>
-          <td><p id="cacher" statut="1">cacher les éléments</p></td>
-          <td><p id="montrer">afficher les éléments</p></td>
+          <!-- <td><p id="cacher" statut="1">cacher les éléments</p></td> -->
+          <td>
+            <p id="basculervisibilite" statut="0">cacher les éléments</p>
+          </td>
           <td><p id="supprimer">supprimer les éléments</p></td>
         </tr>
         <tr>
-          <td colspan="4"><div id="somediv"></div></td>
+          <td colspan="3"><div id="somediv"></div></td>
         </tr>
       </tbody>
     </table>
