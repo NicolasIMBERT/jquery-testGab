@@ -12,7 +12,7 @@ var hclick = function (divtouse$) {
 };
 
 $(document).ready(function () {
-  $('#test').html('<em>It works Gabiel!</em>');
+  $('#test').html('<em>Working in progress</em>');
   $('#test em').css({ color: '#0c0' });
 
   somefunc($('div#somediv'));

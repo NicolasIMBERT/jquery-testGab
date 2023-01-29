@@ -6,3 +6,9 @@ h2 {
   font-size: 13px;
   color: brown;
 }
+table {
+  border: 2px dotted #bbbbbb;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 15px;
+}

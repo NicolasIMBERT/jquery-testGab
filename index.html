@@ -6,13 +6,26 @@
   ></script>
 </head>
 <body>
-  <h1 id="title">Créer un burps</h1>
+  <h1 id="title">Créer un élément</h1>
   <p id="test"><strong style="color: #f00">It does not work</strong></p>
   <div id="someotherdiv">
-    <p id="vider" gabriel="IMBERT">vider le texte</p>
-    <p id="cacher">cacher les éléments</p>
-    <p id="montrer">afficher les éléments</p>
-    <p id="supprimer">supprimer les éléments</p>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><p id="vider" gabriel="valeur d'atribut">vider le texte</p></td>
+          <td><p id="cacher" statut="1">cacher les éléments</p></td>
+          <td><p id="montrer">afficher les éléments</p></td>
+          <td><p id="supprimer">supprimer les éléments</p></td>
+        </tr>
+        <tr>
+          <td colspan="4"><div id="somediv"></div></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div id="somediv"></div>
 </body>
