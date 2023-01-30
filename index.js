@@ -1,6 +1,6 @@
 // Import stylesheets
 import './style.css';
-import { somefunc } from './miscsvc.js';
+import { somefunc, otherfunc } from './miscsvc.js';
 
 var creerelement = function (divtouse$) {
   //console.info('clicked2');
@@ -26,7 +26,7 @@ $(document).ready(function () {
   $('#test em').css({ color: '#0c0' });
 
   somefunc($('div#somediv'));
-
+  console.info(otherfunc($('div#somediv')));
   $('.creer').click(function () {
     // console.info('clicked');
     creerelement($('div#somediv').find('tbody'));
