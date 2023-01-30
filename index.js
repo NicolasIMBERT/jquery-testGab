@@ -22,16 +22,10 @@ var creerelement = function (divtouse$) {
 };
 
 $(document).ready(function () {
-  $('#test').html('<em>Working in progress</em>');
-  $('#test em').css({ color: '#0c0' });
+  $('p#test').html('<em>Working in progress</em>');
+  $('p#test em').css({ color: '#0c0' });
 
-  somefunc($('div#somediv'));
-  console.info(otherfunc($('div#somediv')));
-  $('.creer').click(function () {
-    // console.info('clicked');
-    creerelement($('div#somediv').find('tbody'));
-  });
-
+  //CHANGER VISIBLE/INVISIBLE
   $('#basculervisibilite').click(function () {
     if ($(this).attr('statut') == '1') {
       $(this).attr('statut', '0');
@@ -46,11 +40,23 @@ $(document).ready(function () {
     }
   });
 
+  //VIDER LES TEXT
   $('p#vider').click(function () {
     $('.generees').empty();
   });
 
+  //TOUT SUPPRIMER
   $('p#supprimer').click(function () {
     $('.generees').remove();
+  });
+
+  //TESTER
+  $('.tester').click(function () {
+    somefunc($('div#somediv'));
+    console.info(otherfunc($('div#somediv')));
+    $('.creer').click(function () {
+      // console.info('clicked');
+      creerelement($('div#somediv').find('tbody'));
+    });
   });
 });
