@@ -1,31 +1,19 @@
 // Import stylesheets
 import './style.css';
-import { somefunc, otherfunc } from './miscsvc.js';
-
-var creerelement = function (divtouse$) {
-  //console.info('clicked2');
-  let myid = Date.now();
-  let mytr$ = $('<tr/>').appendTo(divtouse$);
-  $('<td/>', { id: myid, colspan: 3 })
-    .html('element ' + myid)
-    .addClass('generees couleurmoche')
-    .appendTo(mytr$)
-    .click(function () {
-      $(this).remove();
-    })
-    .mouseover(function () {
-      $(this).css({ color: 'blue', 'background-color': 'yellowgreen' });
-    })
-    .mouseout(function () {
-      $(this).css({ color: 'brown', 'background-color': 'bisque' });
-    });
-};
+import { somefunc, otherfunc } from './include/miscsvc.js';
+import { creerelement, viderelement } from './include/element.js';
 
 $(document).ready(function () {
   $('p#test').html('<em>Working in progress</em>');
   $('p#test em').css({ color: '#0c0' });
 
-  //CHANGER VISIBLE/INVISIBLE
+  //CREER UN ELEMENT : class creer
+  $('.creer').click(function () {
+    // console.info('clicked');
+    creerelement($('div#somediv').find('tbody'));
+  });
+
+  //CHANGER VISIBLE/INVISIBLE : id basculervisibilite
   $('#basculervisibilite').click(function () {
     if ($(this).attr('statut') == '1') {
       $(this).attr('statut', '0');
@@ -40,23 +28,17 @@ $(document).ready(function () {
     }
   });
 
-  //VIDER LES TEXT
-  $('p#vider').click(function () {
-    $('.generees').empty();
-  });
+  //VIDER LES TEXT : id = vider
+  $('p#vider').click(viderelement('.generees'));
 
-  //TOUT SUPPRIMER
+  //TOUT SUPPRIMER : id = supprimer
   $('p#supprimer').click(function () {
     $('.generees').remove();
   });
 
-  //TESTER
+  //TESTER : class tester
   $('.tester').click(function () {
     somefunc($('div#somediv'));
     console.info(otherfunc($('div#somediv')));
-    $('.creer').click(function () {
-      // console.info('clicked');
-      creerelement($('div#somediv').find('tbody'));
-    });
   });
 });
